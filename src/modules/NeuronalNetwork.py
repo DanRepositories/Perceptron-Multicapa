@@ -161,6 +161,14 @@ class NeuronalNetwork:
 
     return [node.value for node in self.output_layer]
 
+  def predictions(self, X_train):
+    predictions = []
+    # Se predice la salida para cada dato de entrenamiento y se retorna en formato lista
+    for x in X_train:
+      predictions.append( self.predict(x) )
+
+    return predictions
+
 
   def _make_connections(self, layers):
     '''
